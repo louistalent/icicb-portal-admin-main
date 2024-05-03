@@ -1,0 +1,48 @@
+.modal {
+	position: 			fixed;
+	left:				0;
+	top:				0;
+	right:				0;
+	bottom:				0;
+	
+	display: 			flex;
+	justify-content:	center;
+	align-items:		center;
+
+	background-color:	rgba(0,0,0,0.5);
+	z-index:			100;
+
+	> div {
+		position: relative;
+		border-radius: 0.25em;
+		padding:		2em;
+		background-color:var(--main-bg);
+
+		min-width: 400px;
+		.close {
+			position: absolute;
+			top: 0.25em;
+			right: 0.25em;
+			width: 1em;
+			height: 1em;
+			display: flex;
+			justify-content:	center;
+			align-items:		center;
+
+			font-size: 2em;
+			color: var(--txt-white);
+			cursor: pointer;
+			z-index: 1;
+			&:hover {
+				color: var(--main-color);
+			}
+			&:active {
+				color: var(--gray-dark);
+			}
+		}
+
+		@media (max-width: 576px) {
+			min-width: 90%;
+		}
+	}
+}

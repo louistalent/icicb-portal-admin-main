@@ -1,0 +1,55 @@
+.auto {
+    background-color: var(--second-bg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card{
+        background-color: var(--main-bg);
+        width:500px;
+        @media (max-width: 576px) {
+            width:90%;
+        }
+    }
+    
+    h1 {
+        color: var(--txt-color)   
+    }
+    input {
+        width: 100%;
+        background-color: transparent;
+        color: var(--txt-color);
+        border:1px solid rgb(126, 118, 90);
+        border-radius: 1em;
+        padding: 1em 2em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+    } 
+    button {
+        font-size: 1.2em;
+        width: 100%;
+        /* border: 1px solid var(--second-bg); */
+        background-color: var(--second-bg);
+        padding: 1em 2em;
+        margin-top:12px;
+        border-radius: 1em;
+        transition: 0.2s;
+        &:hover { 
+            /* background-color: var(--second-bg); */
+            /* color: var(--main-color); */
+            box-shadow: var(--box-shadow);
+        }
+        &:active {
+            background-color: var(--main-bg);
+            box-shadow: none;
+        }
+    }
+
+    .error {
+        text-align: center;
+        color : red;
+        transition: height 1s;
+    }
+}

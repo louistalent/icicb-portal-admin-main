@@ -1,0 +1,105 @@
+.table-wrapper {
+	flex:1;
+	overflow-x: auto;
+}
+
+table {
+	width: 100%;
+	min-width: 400px;
+	border-spacing: 0;
+
+	thead {
+		background-color: var(--second-bg);
+	}
+
+	th {
+		&:not(.sort) {
+			padding: 15px 10px;
+		}
+		&.sort {
+			> div {
+				display: flex;
+				align-items: center;
+				padding: 15px 10px;
+				white-space: nowrap;
+				justify-content: left;
+
+				button {
+					background-color: transparent;
+					width: 24px;
+					height: 24px;
+					color: var(--txt-color);
+					&:hover {
+						color: var(--txt-white);
+					}
+					&.active {
+						color: var(--main-color);
+						&:hover {
+							color: var(--second-color);
+						}
+					}
+				}
+				
+			}
+			&.left > div { justify-content: left; }
+			&.center > div { justify-content: center; }
+			&.right > div { justify-content: right; }
+
+		}
+	}
+
+	td {
+		padding: 15px 10px;
+		white-space: nowrap;
+		&.left { text-align: left; }
+		&.center { text-align: center; }
+		&.right { text-align: right; }
+	}
+
+	tbody > tr:hover {
+		background-color: var(--main-color);
+		color: var(--txt-white);
+	}
+}
+
+.pagination {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+
+	.item {
+		min-width: 30px;
+		padding: 3px 5px;
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--second-color);
+		cursor: pointer;
+
+		@media (max-width:576px) {
+			font-size: 0.8em;
+		}
+
+		.item ~ .item {
+			margin-left: 10px;
+		}
+
+		&.active, &.active:hover {
+			background-color: var(--main-color);
+			color: var(--txt-white);
+			font-weight: 600;
+		}
+
+		&:hover:not(.disabled) {
+			color: var(--txt-white);
+			background-color: var(--second-color);
+		}
+
+		&.disabled {
+			color: var(--txt-color)
+		}
+	}
+}

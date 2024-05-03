@@ -1,0 +1,70 @@
+.topnav {
+	padding: 10px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	.right {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	
+		> div ~ div {
+			margin-left: 30px;
+		}
+	}
+
+	.notification {
+		display: flex;
+		align-items: center;
+		padding: 20px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--second-bg);
+		}
+		
+		> i {
+			margin-right: 20px;
+			font-size: 1.5rem;
+		}
+	}
+
+	.account {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		.image {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			overflow: hidden;
+			margin-right: 10px;
+
+			> img {
+				width: 100%;
+			}
+		}
+		
+		.name {
+			font-size: 1rem;
+			font-weight: 600;
+		}
+	}
+
+	
+	@media (max-width:1280px) {
+		.right{
+			position: fixed;
+			top: 5px;
+			z-index: 1002;
+			left: 0;
+			/* justify-content: space-between; */
+			width: 100%;
+			padding: 0 2em;
+			> * {
+				background-color: transparent;
+			}
+		}
+	}
+
+}
